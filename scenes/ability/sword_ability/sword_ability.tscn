@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5o6o63kdi0qu"]
+
+[ext_resource type="Texture2D" uid="uid://bst48gltxp3m2" path="res://scenes/ability/sword_ability/sword.png" id="1_pun1k"]
+
+[node name="SwordAbility" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pun1k")
+centered = false
+offset = Vector2(-8.044, -13.039)
