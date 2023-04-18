@@ -21,8 +21,7 @@ func on_level_up(current_level: int):
 	upgrade_scene_instance.upgrade_selected.connect(on_upgrade_selected)
 	
 	
-func apply_upgrade(upgrade: AbilityUpgrade):
-	
+func apply_upgrade(upgrade: AbilityUpgrade):	
 	var has_upgrade = current_upgrades.has(upgrade.id)
 	if !has_upgrade:
 		current_upgrades[upgrade.id] = {
@@ -31,6 +30,8 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 		}
 	else:
 		current_upgrades[upgrade.id]["quantity"] += 1
+	
+	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
 	
 	
 func on_upgrade_selected(upgrade: AbilityUpgrade):
