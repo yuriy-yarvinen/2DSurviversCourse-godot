@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8nahbvqprwd8"]
+[gd_scene load_steps=10 format=3 uid="uid://b8nahbvqprwd8"]
 
 [ext_resource type="TileSet" uid="uid://boregkfcvavb8" path="res://resources/tileset.tres" id="1_8u6yu"]
 [ext_resource type="PackedScene" uid="uid://rqu775kiydcj" path="res://scenes/ui/arena_time_ui.tscn" id="1_mkskb"]
@@ -8,11 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://rji0ccfe843p" path="res://scenes/manager/experience_manager.tscn" id="4_l1xrt"]
 [ext_resource type="PackedScene" path="res://scenes/manager/enemy_manager.tscn" id="5_3gv3c"]
 [ext_resource type="PackedScene" uid="uid://bor46r0njj76w" path="res://scenes/game_object/experience_vial/experience_vial.tscn" id="7_4tkhw"]
+[ext_resource type="PackedScene" uid="uid://sah51en36crx" path="res://scenes/ui/experience_bar.tscn" id="9_p2xon"]
 
 [node name="Main" type="Node"]
 
 [node name="ArenaTimeUi" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_mkskb")]
 arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("9_p2xon")]
+experience_manager = NodePath("../ExperienceManager")
 
 [node name="ArenaTimeManager" parent="." instance=ExtResource("2_pivor")]
 
@@ -32,21 +36,3 @@ position = Vector2(363, 235)
 
 [node name="ExperienceVial" parent="." instance=ExtResource("7_4tkhw")]
 position = Vector2(285, 249)
-
-[node name="ExperienceVial2" parent="." instance=ExtResource("7_4tkhw")]
-position = Vector2(262, 199)
-
-[node name="ExperienceVial3" parent="." instance=ExtResource("7_4tkhw")]
-position = Vector2(285, 163)
-
-[node name="ExperienceVial4" parent="." instance=ExtResource("7_4tkhw")]
-position = Vector2(332, 147)
-
-[node name="ExperienceVial5" parent="." instance=ExtResource("7_4tkhw")]
-position = Vector2(388, 143)
-
-[node name="ExperienceVial6" parent="." instance=ExtResource("7_4tkhw")]
-position = Vector2(226, 139)
-
-[node name="ExperienceVial7" parent="." instance=ExtResource("7_4tkhw")]
-position = Vector2(283, 116)
