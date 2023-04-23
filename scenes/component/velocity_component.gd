@@ -18,6 +18,10 @@ func accelerate_to_player():
 	accelerate_in_direction(direction)
 
 
+func decelerate():
+	accelerate_in_direction(Vector2.ZERO)
+
+
 func accelerate_in_direction(direction: Vector2):
 	var desired_velocity = direction * max_speed
 	velocity = velocity.lerp(desired_velocity, 1 - exp(-acceleration * get_process_delta_time()))

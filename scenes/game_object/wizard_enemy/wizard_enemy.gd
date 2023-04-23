@@ -4,12 +4,21 @@ extends CharacterBody2D
 
 @onready var visuals = $Visuals
 
+var is_moving:bool = false
 
 func _process(delta):
-	velocity_component.accelerate_to_player()
+	if is_moving:
+		velocity_component.accelerate_to_player()
+	else:
+		velocity_component.decelerate()		
+		
 	velocity_component.move(self)
 	
 	if velocity.x > 0:
 		visuals.scale.x = 1
 	else:
 		visuals.scale.x = -1
+
+
+func set_is_moving(moving: bool):
+	is_moving = moving
